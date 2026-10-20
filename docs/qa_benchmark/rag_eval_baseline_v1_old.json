@@ -1,0 +1,526 @@
+{
+  "summary": {
+    "faithfulness": {
+      "mean": 0.05163636363636363,
+      "min": 0.0,
+      "max": 1.0,
+      "valid_count": 4
+    },
+    "answer_relevancy": {
+      "mean": 0.9818181818181818,
+      "min": 0,
+      "max": 1.0,
+      "valid_count": 54
+    },
+    "context_precision": {
+      "mean": 0.11,
+      "min": 0.0,
+      "max": 1.0,
+      "valid_count": 12
+    },
+    "context_recall": {
+      "mean": 0.10181818181818181,
+      "min": 0.0,
+      "max": 1.0,
+      "valid_count": 14
+    }
+  },
+  "evaluations": [
+    {
+      "question": "WFANet 要解决的核心问题是什么？",
+      "paper": "WFANet",
+      "qa_type": "problem",
+      "faithfulness": 0.0,
+      "answer_relevancy": 1.0,
+      "context_precision": 0.0,
+      "context_recall": 0.0
+    },
+    {
+      "question": "WFANet 的核心创新是什么？",
+      "paper": "WFANet",
+      "qa_type": "innovation",
+      "faithfulness": 0.0,
+      "answer_relevancy": 1.0,
+      "context_precision": 0.0,
+      "context_recall": 0.0
+    },
+    {
+      "question": "WFANet 如何使用小波变换？",
+      "paper": "WFANet",
+      "qa_type": "methodology",
+      "faithfulness": 0.0,
+      "answer_relevancy": 1.0,
+      "context_precision": 0.2,
+      "context_recall": 0.1
+    },
+    {
+      "question": "WFANet 中的 Frequency Attention Triplet 由哪些部分组成，各部分物理含义是什么？",
+      "paper": "WFANet",
+      "qa_type": "methodology",
+      "faithfulness": 0.0,
+      "answer_relevancy": 1.0,
+      "context_precision": 0.6,
+      "context_recall": 0.4
+    },
+    {
+      "question": "WFANet 包含哪两个子模块？",
+      "paper": "WFANet",
+      "qa_type": "architecture",
+      "faithfulness": 0.0,
+      "answer_relevancy": 1.0,
+      "context_precision": 0.0,
+      "context_recall": 0.0
+    },
+    {
+      "question": "WFANet 在哪些数据集上进行了评估？使用了哪些指标？",
+      "paper": "WFANet",
+      "qa_type": "experiment",
+      "faithfulness": 0.0,
+      "answer_relevancy": 1.0,
+      "context_precision": 0.0,
+      "context_recall": 0.0
+    },
+    {
+      "question": "WFANet 相比第二优方法在 PSNR 上有多少提升？",
+      "paper": "WFANet",
+      "qa_type": "experiment",
+      "faithfulness": 0,
+      "answer_relevancy": 0,
+      "context_precision": 0.0,
+      "context_recall": 0.0,
+      "skipped": true
+    },
+    {
+      "question": "WFANet 的 Spatial Detail Enhancement Module (SDEM) 的作用是什么？",
+      "paper": "WFANet",
+      "qa_type": "methodology",
+      "faithfulness": 0.67,
+      "answer_relevancy": 1.0,
+      "context_precision": 1.0,
+      "context_recall": 0.7
+    },
+    {
+      "question": "WFANet 的整体框架是什么结构？",
+      "paper": "WFANet",
+      "qa_type": "architecture",
+      "faithfulness": 0.0,
+      "answer_relevancy": 1.0,
+      "context_precision": 0.0,
+      "context_recall": 0.0
+    },
+    {
+      "question": "WFANet 的方法与之前频域方法（如 FAFNet）有什么区别？",
+      "paper": "WFANet",
+      "qa_type": "comparison",
+      "faithfulness": 0.0,
+      "answer_relevancy": 1.0,
+      "context_precision": 0.0,
+      "context_recall": 0.0
+    },
+    {
+      "question": "PSCSC 网络要解决的核心问题是什么？",
+      "paper": "PSCSC",
+      "qa_type": "problem",
+      "faithfulness": 0.0,
+      "answer_relevancy": 1.0,
+      "context_precision": 0.0,
+      "context_recall": 0.0
+    },
+    {
+      "question": "PSCSC 网络的整体架构由哪三个分支组成？",
+      "paper": "PSCSC",
+      "qa_type": "architecture",
+      "faithfulness": 0.0,
+      "answer_relevancy": 1.0,
+      "context_precision": 0.0,
+      "context_recall": 0.0
+    },
+    {
+      "question": "PSCSC 中的 LSR 和 GSR 模块各有什么作用？",
+      "paper": "PSCSC",
+      "qa_type": "methodology",
+      "faithfulness": 0.0,
+      "answer_relevancy": 1.0,
+      "context_precision": 0.6,
+      "context_recall": 0.7
+    },
+    {
+      "question": "LSR 模块的具体实现方法是什么？",
+      "paper": "PSCSC",
+      "qa_type": "methodology",
+      "faithfulness": 0.0,
+      "answer_relevancy": 1.0,
+      "context_precision": 0.0,
+      "context_recall": 0.0
+    },
+    {
+      "question": "PSCSC 中的 DAFE 模块是什么？",
+      "paper": "PSCSC",
+      "qa_type": "methodology",
+      "faithfulness": 0.0,
+      "answer_relevancy": 1.0,
+      "context_precision": 0.2,
+      "context_recall": 0.1
+    },
+    {
+      "question": "SSF（光谱-空间融合）分支如何工作？",
+      "paper": "PSCSC",
+      "qa_type": "methodology",
+      "faithfulness": 0.0,
+      "answer_relevancy": 1.0,
+      "context_precision": 0.6,
+      "context_recall": 0.7
+    },
+    {
+      "question": "PSCSC 在哪些数据集上进行了实验？",
+      "paper": "PSCSC",
+      "qa_type": "experiment",
+      "faithfulness": 0.0,
+      "answer_relevancy": 1.0,
+      "context_precision": 0.0,
+      "context_recall": 0.0
+    },
+    {
+      "question": "PSCSC 使用哪些评估指标？",
+      "paper": "PSCSC",
+      "qa_type": "experiment",
+      "faithfulness": 0.0,
+      "answer_relevancy": 1.0,
+      "context_precision": 0.0,
+      "context_recall": 0.1
+    },
+    {
+      "question": "PSCSC 如何验证各模块的有效性？",
+      "paper": "PSCSC",
+      "qa_type": "experiment",
+      "faithfulness": 0.0,
+      "answer_relevancy": 1.0,
+      "context_precision": 0.0,
+      "context_recall": 0.0
+    },
+    {
+      "question": "PSCSC 与现有方法相比的总体优势是什么？",
+      "paper": "PSCSC",
+      "qa_type": "comparison",
+      "faithfulness": 0.0,
+      "answer_relevancy": 1.0,
+      "context_precision": 0.0,
+      "context_recall": 0.0
+    },
+    {
+      "question": "SFIT 的核心贡献是什么？",
+      "paper": "SFIT",
+      "qa_type": "innovation",
+      "faithfulness": 0.0,
+      "answer_relevancy": 1.0,
+      "context_precision": 0.0,
+      "context_recall": 0.0
+    },
+    {
+      "question": "SFIT 的整体网络架构是怎样的？",
+      "paper": "SFIT",
+      "qa_type": "architecture",
+      "faithfulness": 0.0,
+      "answer_relevancy": 1.0,
+      "context_precision": 0.0,
+      "context_recall": 0.0
+    },
+    {
+      "question": "SFIT 中的 Transformer 与标准 Transformer 有何不同？",
+      "paper": "SFIT",
+      "qa_type": "methodology",
+      "faithfulness": 0.0,
+      "answer_relevancy": 1.0,
+      "context_precision": 0.0,
+      "context_recall": 0.0
+    },
+    {
+      "question": "SFIT 为什么使用可逆神经网络（INN）进行特征融合？",
+      "paper": "SFIT",
+      "qa_type": "methodology",
+      "faithfulness": 0.0,
+      "answer_relevancy": 1.0,
+      "context_precision": 0.0,
+      "context_recall": 0.0
+    },
+    {
+      "question": "SFIT 在哪些数据集上进行了评估？",
+      "paper": "SFIT",
+      "qa_type": "experiment",
+      "faithfulness": 0.0,
+      "answer_relevancy": 1.0,
+      "context_precision": 0.0,
+      "context_recall": 0.0
+    },
+    {
+      "question": "SFIT 使用了哪些评估指标？",
+      "paper": "SFIT",
+      "qa_type": "experiment",
+      "faithfulness": 0.0,
+      "answer_relevancy": 1.0,
+      "context_precision": 0.0,
+      "context_recall": 0.0
+    },
+    {
+      "question": "SFIT 的局部特征分支如何设计？",
+      "paper": "SFIT",
+      "qa_type": "methodology",
+      "faithfulness": 0.0,
+      "answer_relevancy": 1.0,
+      "context_precision": 0.0,
+      "context_recall": 0.0
+    },
+    {
+      "question": "SFIT 中的仿射耦合层如何工作？",
+      "paper": "SFIT",
+      "qa_type": "methodology",
+      "faithfulness": 0.0,
+      "answer_relevancy": 1.0,
+      "context_precision": 0.0,
+      "context_recall": 0.0
+    },
+    {
+      "question": "SFIT 如何增强 INN 的表示能力？",
+      "paper": "SFIT",
+      "qa_type": "methodology",
+      "faithfulness": 0.0,
+      "answer_relevancy": 1.0,
+      "context_precision": 0.0,
+      "context_recall": 0.0
+    },
+    {
+      "question": "DCPNet 的核心创新点是什么？",
+      "paper": "DCPNet",
+      "qa_type": "innovation",
+      "faithfulness": 0.0,
+      "answer_relevancy": 1.0,
+      "context_precision": 0.0,
+      "context_recall": 0.0
+    },
+    {
+      "question": "DCPNet 的双任务框架是如何设计的？",
+      "paper": "DCPNet",
+      "qa_type": "architecture",
+      "faithfulness": 0.0,
+      "answer_relevancy": 1.0,
+      "context_precision": 0.0,
+      "context_recall": 0.0
+    },
+    {
+      "question": "DCPNet 在哪些数据集上进行了实验？",
+      "paper": "DCPNet",
+      "qa_type": "experiment",
+      "faithfulness": 0.0,
+      "answer_relevancy": 1.0,
+      "context_precision": 0.0,
+      "context_recall": 0.0
+    },
+    {
+      "question": "DCPNet 使用哪些评估指标？",
+      "paper": "DCPNet",
+      "qa_type": "experiment",
+      "faithfulness": 0.0,
+      "answer_relevancy": 1.0,
+      "context_precision": 0.0,
+      "context_recall": 0.1
+    },
+    {
+      "question": "DCPNet 中的 FFMM（特征融合与挖掘模块）有什么作用？",
+      "paper": "DCPNet",
+      "qa_type": "methodology",
+      "faithfulness": 0.0,
+      "answer_relevancy": 1.0,
+      "context_precision": 0.0,
+      "context_recall": 0.0
+    },
+    {
+      "question": "DCPNet 与单任务驱动的全色锐化方法有何不同？",
+      "paper": "DCPNet",
+      "qa_type": "comparison",
+      "faithfulness": 0.0,
+      "answer_relevancy": 1.0,
+      "context_precision": 0.0,
+      "context_recall": 0.0
+    },
+    {
+      "question": "DCPNet 中的 PAN-FE 分支和 LRMS-SR 分支如何互相促进？",
+      "paper": "DCPNet",
+      "qa_type": "methodology",
+      "faithfulness": 0.67,
+      "answer_relevancy": 1.0,
+      "context_precision": 1.0,
+      "context_recall": 0.7
+    },
+    {
+      "question": "DCPNet 的全色锐化过程如何形式化定义？",
+      "paper": "DCPNet",
+      "qa_type": "methodology",
+      "faithfulness": 0.0,
+      "answer_relevancy": 1.0,
+      "context_precision": 0.0,
+      "context_recall": 0.0
+    },
+    {
+      "question": "DCPNet 的消融实验验证了什么？",
+      "paper": "DCPNet",
+      "qa_type": "experiment",
+      "faithfulness": 0.0,
+      "answer_relevancy": 1.0,
+      "context_precision": 0.0,
+      "context_recall": 0.0
+    },
+    {
+      "question": "DFCFN 的研究背景和问题是什么？",
+      "paper": "DFCFN",
+      "qa_type": "problem",
+      "faithfulness": 0.0,
+      "answer_relevancy": 1.0,
+      "context_precision": 0.0,
+      "context_recall": 0.0
+    },
+    {
+      "question": "DFCFN 的整体架构由哪两个子网络组成？",
+      "paper": "DFCFN",
+      "qa_type": "architecture",
+      "faithfulness": 0.0,
+      "answer_relevancy": 1.0,
+      "context_precision": 0.0,
+      "context_recall": 0.0
+    },
+    {
+      "question": "DFCFN 使用的格状滤波器结构（LFS）的原理是什么？",
+      "paper": "DFCFN",
+      "qa_type": "methodology",
+      "faithfulness": 0.0,
+      "answer_relevancy": 1.0,
+      "context_precision": 0.0,
+      "context_recall": 0.0
+    },
+    {
+      "question": "DFCFN 的第二阶段 MSCFN 如何校正光谱？",
+      "paper": "DFCFN",
+      "qa_type": "methodology",
+      "faithfulness": 0.0,
+      "answer_relevancy": 1.0,
+      "context_precision": 0.75,
+      "context_recall": 0.4
+    },
+    {
+      "question": "DFCFN 中的 FCCFN 如何实现模态特征的相互校正？",
+      "paper": "DFCFN",
+      "qa_type": "methodology",
+      "faithfulness": 0.0,
+      "answer_relevancy": 1.0,
+      "context_precision": 0.0,
+      "context_recall": 0.0
+    },
+    {
+      "question": "DFCFN 在哪些数据集上进行了评估？",
+      "paper": "DFCFN",
+      "qa_type": "experiment",
+      "faithfulness": 0.0,
+      "answer_relevancy": 1.0,
+      "context_precision": 0.0,
+      "context_recall": 0.0
+    },
+    {
+      "question": "DFCFN 相比第二优方法在 SAM 指标上提升了多少？",
+      "paper": "DFCFN",
+      "qa_type": "experiment",
+      "faithfulness": 1.0,
+      "answer_relevancy": 1.0,
+      "context_precision": 0.5,
+      "context_recall": 1.0
+    },
+    {
+      "question": "DFCFN 与之前的全色锐化方法在任务范围上有什么区别？",
+      "paper": "DFCFN",
+      "qa_type": "comparison",
+      "faithfulness": 0.0,
+      "answer_relevancy": 1.0,
+      "context_precision": 0.0,
+      "context_recall": 0.0
+    },
+    {
+      "question": "DFCFN 中 CE-Transformer 的作用是什么？",
+      "paper": "DFCFN",
+      "qa_type": "methodology",
+      "faithfulness": 0.5,
+      "answer_relevancy": 1.0,
+      "context_precision": 0.2,
+      "context_recall": 0.1
+    },
+    {
+      "question": "DFCFN 如何解决上采样导致的光谱失真问题？",
+      "paper": "DFCFN",
+      "qa_type": "methodology",
+      "faithfulness": 0.0,
+      "answer_relevancy": 1.0,
+      "context_precision": 0.0,
+      "context_recall": 0.0
+    },
+    {
+      "question": "全色锐化（Pansharpening）的基本目标是什么？",
+      "paper": "general",
+      "qa_type": "concept",
+      "faithfulness": 0.0,
+      "answer_relevancy": 1.0,
+      "context_precision": 0.0,
+      "context_recall": 0.0
+    },
+    {
+      "question": "全色锐化中常用的降分辨率评估指标有哪些？各衡量什么？",
+      "paper": "general",
+      "qa_type": "concept",
+      "faithfulness": 0.0,
+      "answer_relevancy": 1.0,
+      "context_precision": 0.0,
+      "context_recall": 0.0
+    },
+    {
+      "question": "全色锐化中常用的全分辨率评估指标有哪些？",
+      "paper": "general",
+      "qa_type": "concept",
+      "faithfulness": 0.0,
+      "answer_relevancy": 1.0,
+      "context_precision": 0.0,
+      "context_recall": 0.0
+    },
+    {
+      "question": "Wald 协议在全色锐化中起什么作用？",
+      "paper": "general",
+      "qa_type": "concept",
+      "faithfulness": 0.0,
+      "answer_relevancy": 1.0,
+      "context_precision": 0.0,
+      "context_recall": 0.1
+    },
+    {
+      "question": "DWT（离散小波变换）在全色锐化中有哪些优势？",
+      "paper": "general",
+      "qa_type": "concept",
+      "faithfulness": 0.0,
+      "answer_relevancy": 1.0,
+      "context_precision": 0.2,
+      "context_recall": 0.4
+    },
+    {
+      "question": "Transformer 在全色锐化中相比 CNN 有什么优势？",
+      "paper": "general",
+      "qa_type": "concept",
+      "faithfulness": 0.0,
+      "answer_relevancy": 1.0,
+      "context_precision": 0.0,
+      "context_recall": 0.0
+    },
+    {
+      "question": "这五篇论文在解决问题的方法论上有哪些不同路线？",
+      "paper": "general",
+      "qa_type": "comparison",
+      "faithfulness": 0.0,
+      "answer_relevancy": 1.0,
+      "context_precision": 0.2,
+      "context_recall": 0.0
+    }
+  ]
+}

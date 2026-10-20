@@ -1,0 +1,538 @@
+[
+  {
+    "question": "WFANet 要解决的核心问题是什么？",
+    "ground_truth": "现有全色锐化方法主要在空间域操作，无法干净分离不同频率成分，导致融合过程中不同频率特征混淆和丢失。WFANet 利用小波变换实现频率的干净分离和无损重建，解决频域信息利用不充分的问题。",
+    "contexts": [
+      "Although pansharpening in the frequency domain offers clear advantages, most existing methods either continue to operate solely in the spatial domain or fail to fully exploit the benefits of the frequency domain. To address this issue, we innovatively propose Multi-Frequency Fusion Attention (MFFA), which leverages wavelet transforms to cleanly separate frequencies and enable lossless reconstruction across different frequency domains.",
+      "Direct fusion in the spatial domain methods can often result in detail loss or blurring due to the imprecise separation of frequency information. In contrast, frequency-based methods can separate different frequencies for targeted processing, which better preserves hard-to-capture high-frequency information while effectively preventing interference between different frequencies."
+    ],
+    "paper": "WFANet",
+    "qa_type": "problem"
+  },
+  {
+    "question": "WFANet 的核心创新是什么？",
+    "ground_truth": "Multi-Frequency Fusion Attention (MFFA) 机制，它引入了 Frequency Attention Triplet（Frequency-Query、Spatial-Key、Fusion-Value），根据不同特征代表的物理意义设计注意力三元组，实现跨频域的有效特征融合。",
+    "contexts": [
+      "We innovatively propose Multi-Frequency Fusion Attention (MFFA), which leverages wavelet transforms to cleanly separate frequencies and enable lossless reconstruction across different frequency domains. Then, we generate Frequency-Query, Spatial-Key, and Fusion-Value based on the physical meanings represented by different features, which enables a more effective capture of specific information in the frequency domain.",
+      "In our proposed MFFA, we introduce the concept of a Frequency Attention Triplet, which consists of Frequency-Query, Spatial-Key, and Fusion-Value. Unlike conventional attention mechanisms, our Frequency Attention Triplet has distinct physical significance: Frequency-Query represents frequency features, Spatial-Key encodes spatial information, and Fusion-Value represents the preliminary fusion of spatial and spectral features."
+    ],
+    "paper": "WFANet",
+    "qa_type": "innovation"
+  },
+  {
+    "question": "WFANet 如何使用小波变换？",
+    "ground_truth": "WFANet 使用离散小波变换（DWT）将图像特征干净分离为不同频率分量（LL、LH、HL、HH），用逆离散小波变换（IDWT）进行无损重建。多次 DWT 构建小波金字塔，实现多尺度渐进融合。",
+    "contexts": [
+      "The Discrete Wavelet Transform (DWT) cleanly separates frequency components. The Inverse Discrete Wavelet Transform (IDWT) is lossless, preserving all information. Repeated DWT builds a wavelet pyramid, efficiently handling multi-scale features and enhancing detail detection, offering advantages over other methods that attempt to separate frequency components.",
+      "We first perform a DWT on P, which is the feature of the panchromatic (PAN) image after convolution: P_LL, P_LH, P_HL, P_HH = DWT(P) where P_LL represents the low-frequency details of P, and P_LH, P_HL, and P_HH represent the high-frequency details of P in the horizontal, vertical, and diagonal directions, respectively."
+    ],
+    "paper": "WFANet",
+    "qa_type": "methodology"
+  },
+  {
+    "question": "WFANet 中的 Frequency Attention Triplet 由哪些部分组成，各部分物理含义是什么？",
+    "ground_truth": "由 Frequency-Query（频率查询）、Spatial-Key（空间键）、Fusion-Value（融合值）组成。Frequency-Query 代表频率特征，Spatial-Key 编码空间信息，Fusion-Value 是空间和光谱特征的初步融合。",
+    "contexts": [
+      "In our proposed MFFA, we introduce the concept of a Frequency Attention Triplet, which consists of Frequency-Query, Spatial-Key, and Fusion-Value. Unlike conventional attention mechanisms, our Frequency Attention Triplet has distinct physical significance: Frequency-Query represents frequency features, Spatial-Key encodes spatial information, and Fusion-Value represents the preliminary fusion of spatial and spectral features."
+    ],
+    "paper": "WFANet",
+    "qa_type": "methodology"
+  },
+  {
+    "question": "WFANet 包含哪两个子模块？",
+    "ground_truth": "Multi-Frequency Fusion Attention (MFFA) 和 Spatial Detail Enhancement Module (SDEM)。MFFA 负责跨频域特征融合，SDEM 负责提取和增强空间细节。",
+    "contexts": [
+      "Our WFANet consists of two sub-modules: the Multi-Frequency Fusion Attention (MFFA) and the Spatial Detail Enhancement Module (SDEM).",
+      "In designing SDEM, we compare different operations for their adaptability to the frequency domain, ensuring better preservation of spatial details."
+    ],
+    "paper": "WFANet",
+    "qa_type": "architecture"
+  },
+  {
+    "question": "WFANet 在哪些数据集上进行了评估？使用了哪些指标？",
+    "ground_truth": "数据集：WorldView-3 (WV3)、GaoFen-2 (GF2)、QuickBird (QB)。降分辨率指标：SAM、ERGAS、Q4/Q8；全分辨率指标：HQNR、Ds、Dλ。",
+    "contexts": [
+      "We adopt various datasets, including datasets captured by the WorldView-3 (WV3), GaoFen-2 (GF2), and QuickBird (QB) sensors.",
+      "We evaluate our method using standard pansharpening metrics including SAM, ERGAS, and Q4/Q8 for reduced-resolution datasets, and HQNR, Ds, and Dλ for full-resolution datasets."
+    ],
+    "paper": "WFANet",
+    "qa_type": "experiment"
+  },
+  {
+    "question": "WFANet 相比第二优方法在 PSNR 上有多少提升？",
+    "ground_truth": "在 WV3 数据集提升 0.228dB，QB 数据集提升 0.334dB，GF2 数据集提升 0.417dB。",
+    "contexts": [
+      "Our method achieves a PSNR improvement of 0.228dB, 0.334dB, and 0.417dB on the WV3, QB, and GF2 datasets, respectively."
+    ],
+    "paper": "WFANet",
+    "qa_type": "experiment"
+  },
+  {
+    "question": "WFANet 的 Spatial Detail Enhancement Module (SDEM) 的作用是什么？",
+    "ground_truth": "SDEM 专注于空间细节的提取和增强。它通过对比不同操作在频域的适应性来设计，确保更好地保留空间细节，与 MFFA 协同工作以提升融合质量。",
+    "contexts": [
+      "The Spatial Detail Enhancement Module (SDEM) to focus on the extraction and enhancement of spatial details. In designing SDEM, we compare different operations for their adaptability to the frequency domain, ensuring better preservation of spatial details."
+    ],
+    "paper": "WFANet",
+    "qa_type": "methodology"
+  },
+  {
+    "question": "WFANet 的整体框架是什么结构？",
+    "ground_truth": "多尺度渐进重建框架，利用小波金字塔固有的多尺度特性。网络通过多个尺度逐步处理数据，每个尺度包含 MFFA 和 SDEM 模块，利用 DWT/IDWT 在频域和空间域之间切换。",
+    "contexts": [
+      "Our overall framework is a multi-scale progressive reconstruction framework, fully utilizing the inherent multi-scale nature of the wavelet pyramid.",
+      "Our network processes the data using multiple scales. WFANet consists of two sub-modules: the Multi-Frequency Fusion Attention (MFFA) and the Spatial Detail Enhancement Module (SDEM)."
+    ],
+    "paper": "WFANet",
+    "qa_type": "architecture"
+  },
+  {
+    "question": "WFANet 的方法与之前频域方法（如 FAFNet）有什么区别？",
+    "ground_truth": "之前频域方法（如 FAFNet）使用 DWT 提取频域特征后用 CNN 重建，但 CNN 擅长低频信息，对高频细节效果有限。WFANet 改用注意力机制，通过 Frequency Attention Triplet 更灵活地捕获特定频域特征，提升高频信息融合质量。",
+    "contexts": [
+      "Some past methods have employed wavelet transforms for pansharpening, such as FAFNet, which utilizes DWT layers to extract frequency-domain features, followed by IDWT layers that reconstruct these features into the spatial domain. However, convolutional neural networks inherently excel at capturing low-frequency information and are less effective in capturing high-frequency details. To address this issue, we consider leveraging attention mechanisms that can more flexibly capture specific features."
+    ],
+    "paper": "WFANet",
+    "qa_type": "comparison"
+  },
+  {
+    "question": "PSCSC 网络要解决的核心问题是什么？",
+    "ground_truth": "现有全色锐化方法往往忽视 PAN 和 MS 图像之间显著的模态差异，缺乏两者之间的交互，导致融合结果出现空间-光谱失真。",
+    "contexts": [
+      "Current pansharpening methods often overlook the significant modality differences between source images and lack interaction between them, resulting in spatial-spectral distortions.",
+      "PAN and MS images present significant inherent differences in their characteristics. However, existing methods often attempt to combine these two types of images directly without sufficient interaction between MS and PAN images, resulting in spatial-spectral distortion."
+    ],
+    "paper": "PSCSC",
+    "qa_type": "problem"
+  },
+  {
+    "question": "PSCSC 网络的整体架构由哪三个分支组成？",
+    "ground_truth": "光谱校正分支（Spectral Correction Branch）、空间补偿分支（Spatial Compensation Branch）和光谱-空间融合分支（Spectral-Spatial Fusion, SSF Branch）。",
+    "contexts": [
+      "The network comprises a spectral correction branch, a spatial compensation branch, and a spectral-spatial fusion (SSF) branch.",
+      "The overall architecture of our proposed framework consists of three branches: the spectral correction branch, the spatial compensation branch, and the SSF branch."
+    ],
+    "paper": "PSCSC",
+    "qa_type": "architecture"
+  },
+  {
+    "question": "PSCSC 中的 LSR 和 GSR 模块各有什么作用？",
+    "ground_truth": "LSR（Local Spectral Reinforcement）增强不同光谱特征中独特的局部信息；GSR（Global Spectral Rectification）通过交叉注意力机制捕获长程依赖关系并校正光谱特征。两者协同实现局部和全局的光谱信息校正。",
+    "contexts": [
+      "We designed a local spectral reinforcement (LSR) module and a global spectral rectification (GSR) module to keep the spectral fidelity. The LSR module is designed to reinforce the unique local information from different kinds of spectral features, while the GSR module captures long-range dependency and rectifies the spectral features with a cross-attention mechanism.",
+      "The LSR block enhances features by emphasizing significant spectral features while suppressing redundant information. In contrast, the GSR fine-tunes the spectral features by considering long-range dependencies across different spectral features."
+    ],
+    "paper": "PSCSC",
+    "qa_type": "methodology"
+  },
+  {
+    "question": "LSR 模块的具体实现方法是什么？",
+    "ground_truth": "输入特征被分为两个流。首先将两流光谱特征相乘得到公共特征，然后用原始特征减去公共特征得到独特的局部特征。通过乘法和减法操作，LSR 有效增强了独特的局部光谱信息。",
+    "contexts": [
+      "In LSR, to enhance the unique information of different types of local features, the input features are split into two streams for processing. The first step involves multiplying the two streams of spectral features to obtain common features. The LSR block proceeds to enhance the unique characteristics by subtracting the common features from the original spectral features of each stream. The reinforced local spectral features: f_common = f_spe1 × f_spe2; f_unique1 = f_spe1 − f_common; f_unique2 = f_spe2 − f_common."
+    ],
+    "paper": "PSCSC",
+    "qa_type": "methodology"
+  },
+  {
+    "question": "PSCSC 中的 DAFE 模块是什么？",
+    "ground_truth": "DAFE（Dilated Adaptive Feature Extraction）模块是多尺度空洞自适应特征提取模块。它集成多尺度空洞卷积和自适应特征提取机制，结合光谱和空间注意力来从 PAN 图像中提取空间细节。",
+    "contexts": [
+      "The spatial compensation branch incorporates a dilated adaptive feature extraction (DAFE) module with spectral and spatial attention to capture spatial details.",
+      "We design a DAFE module by integrating multiscale dilated convolutions and adaptive feature extraction mechanisms, allowing for flexible and efficient capture of important spatial details across varying scales and regions."
+    ],
+    "paper": "PSCSC",
+    "qa_type": "methodology"
+  },
+  {
+    "question": "SSF（光谱-空间融合）分支如何工作？",
+    "ground_truth": "SSF 将上采样 MS 和 PAN 图像拼接后通过两层卷积生成初始特征，再经 Transformer 自注意力处理得到注意力特征。随后与光谱校正分支的 GSR 输出融合进行光谱精炼，同时整合空间补偿分支的空间细节。通过三个连续的交互融合阶段，逐步优化光谱和空间信息。",
+    "contexts": [
+      "In SSF module, IUPMS and IPAN are first concatenated and passed through two convolution layers to generate the initial feature, F_ini. This feature then undergoes self-attention processing via a Transformer to produce attention feature F_att. Interaction between different modalities occurs in two key ways: first, F_ini is fed into the GSR module in the spectral correction branch, and the output of GSR is fused with F_att for spectral refinement. Second, spatial details extracted from the spatial compensation branch are integrated into the SSF module for spatial enhancement. Through three successive interactive-fusion stages, both spectral and spatial information are progressively optimized."
+    ],
+    "paper": "PSCSC",
+    "qa_type": "methodology"
+  },
+  {
+    "question": "PSCSC 在哪些数据集上进行了实验？",
+    "ground_truth": "Pléiades、IKONOS 和 WorldView-3 三个卫星数据集。每个数据集 2500 组图像用于训练，100 组用于测试。",
+    "contexts": [
+      "The Pléiades, IKONOS, and WorldView-3 datasets are used. In total, 2500 groups of RS images from each dataset are used to train our model, and 100 image pairs from each dataset are used for testing."
+    ],
+    "paper": "PSCSC",
+    "qa_type": "experiment"
+  },
+  {
+    "question": "PSCSC 使用哪些评估指标？",
+    "ground_truth": "降分辨率实验使用 UIQI、SAM、ERGAS、SCC、Q2n。全分辨率实验使用三个无参考指标：Ds（光谱失真系数）、Dλ 和 HQNR。",
+    "contexts": [
+      "Reduced-resolution assessments include UIQI, SAM, ERGAS, SCC, and Q2n. The FS results are validated using three no-reference image quality metrics: the spectral distortion coefficient is denoted as D_s and hybrid QNR (HQNR)."
+    ],
+    "paper": "PSCSC",
+    "qa_type": "experiment"
+  },
+  {
+    "question": "PSCSC 如何验证各模块的有效性？",
+    "ground_truth": "通过消融实验，分别移除 LSR、GSR、DAFE 模块，与完整网络在 WorldView-3 数据集上对比。结果显示移除 DAFE 的模型残差最大，所有模块对最终性能均有贡献。同时验证了空洞卷积层在 DAFE 中的有效性。",
+    "contexts": [
+      "To validate the effectiveness of the proposed LSR, GSR, and DAFE block, we conduct ablation experiments on three datasets. The experimental results demonstrate that the model without DAFE exhibits a significantly larger residue, indicating poorer performance compared to the proposed method.",
+      "The ablation experiment results for the dilated convolutional layer in the DAFE block reveal that the incorporation of dilated convolution leads to consistent improvements across all evaluation metrics."
+    ],
+    "paper": "PSCSC",
+    "qa_type": "experiment"
+  },
+  {
+    "question": "PSCSC 与现有方法相比的总体优势是什么？",
+    "ground_truth": "在 IKONOS、Pléiades 和 WorldView-3 三个数据集的所有指标上均优于对比方法（包括 AWLP-R、RBDSD、APNN-FT、PCGAN、FusionNet、VO+Net、TDNet、PMRF、PLR-Diff 等），在空间细节增强和光谱信息保持之间取得了最优平衡。",
+    "contexts": [
+      "The proposed method shows significant advantages across all metrics on the IKONOS dataset. Quantitative assessments demonstrate the superior performance of our method across all metrics on the Pléiades dataset. Our method consistently surpasses other methods in all metrics on the WorldView-3 dataset."
+    ],
+    "paper": "PSCSC",
+    "qa_type": "comparison"
+  },
+  {
+    "question": "SFIT 的核心贡献是什么？",
+    "ground_truth": "首次将 Transformer 和可逆神经网络（INN）引入全色锐化领域。Transformer 建模长程依赖关系，INN 实现信息无损的特征融合。采用定制化 Transformer 架构，将 PAN 和 MS 特征分别作为查询（Query）和键（Key）进行跨模态联合特征学习。",
+    "contexts": [
+      "We propose a novel and effective method by exploiting a customized transformer architecture and information-lossless invertible neural module for long-range dependencies modeling and effective feature fusion. The customized transformer formulates the PAN and MS features as queries and keys to encourage joint feature learning across two modalities while the designed invertible neural module enables effective feature fusion.",
+      "To the best of our knowledge, this is the first attempt to introduce transformer and invertible neural network into pan-sharpening field."
+    ],
+    "paper": "SFIT",
+    "qa_type": "innovation"
+  },
+  {
+    "question": "SFIT 的整体网络架构是怎样的？",
+    "ground_truth": "输入 MS 和 PAN 图像，先通过两个独立的 3×3 卷积投影到特征空间。然后经过双流局部和长程特征提取模块（CNN 局部分支 + Transformer 长程分支），再通过密集连接的可逆特征融合模块（INN）进行融合，最后通过跳跃连接与上采样 MS 图像相加重建 HR-MS 图像。",
+    "contexts": [
+      "The overall structure takes the MS image and PAN image as input. Our method firstly applies two independent 3×3 convolution layers to project the up-sampling MS and PAN image into feature space. Next, the feature maps are passed through two-stream local and long-range feature extraction module. The local branch consists of convolution layers, while the transformer branch uses multi-head attention. The obtained features are further propagated to densely-connected invertible feature fusion neural module. Finally, we construct the HR-MS images by adding the upsampling MS images to the transformed representation with skip-connection."
+    ],
+    "paper": "SFIT",
+    "qa_type": "architecture"
+  },
+  {
+    "question": "SFIT 中的 Transformer 与标准 Transformer 有何不同？",
+    "ground_truth": "标准 Transformer 对所有 token 做自注意力。SFIT 的 Transformer 将 MS 特征 patches 作为 Query（Q），PAN 特征 patches 作为 Key（K），Value 分为 V1（MS）和 V2（PAN）两部分。同时引入 hard-attention 和 soft-attention 两种注意力图：hard-attention 通过 argmax 选择最相关位置，soft-attention 使用 softmax 加权融合。",
+    "contexts": [
+      "Different from standard transformer, we expand the V (value) with two components, V1 and V2. For each patch qi in Q and kj in K, we calculate the relevance ri,j between these two patches by normalized inner product. We propose hard-attention and soft-attention module. Hard-attention map H is calculated from the relevance ri,j: h_i = argmax_j(r_i,j). Soft-attention map S = softmax(R). Finally, we obtain enhanced long-range features by integrating soft-attention and hard-attention with PAN features."
+    ],
+    "paper": "SFIT",
+    "qa_type": "methodology"
+  },
+  {
+    "question": "SFIT 为什么使用可逆神经网络（INN）进行特征融合？",
+    "ground_truth": "可逆网络在变换过程中信息无损（information-lossless），不同于纯卷积层存在信息丢失。SFIT 的输入自然分为局部特征 L0 和长程特征 G0 两部分，恰好匹配 INN 需要将输入分为两部分的特性。通过密集连接的 INN 模块（3个仿射耦合层堆叠），实现了局部和长程特征的有效融合。",
+    "contexts": [
+      "Different from pure convolution layer, invertible networks are information-lossless during the transformation. For the invertible model, the input needs to be divided into two parts. In our work, the input of our invertible module naturally consists of two parts, local and long-range features L0 and G0, which exactly match the splitting of input.",
+      "To increase the representational capacity of the network, immediate sequential features of each invertible unit are propagated to the final unit by skip-connection. The k is the number of our stacked invertible neural units and set as 3 to reduce the computational cost."
+    ],
+    "paper": "SFIT",
+    "qa_type": "methodology"
+  },
+  {
+    "question": "SFIT 在哪些数据集上进行了评估？",
+    "ground_truth": "WorldView II、WorldView III 和 GaoFen2 三个卫星数据集。",
+    "contexts": [
+      "Three datasets are used in our experiments, including WorldView II, WorldView III, and GaoFen2."
+    ],
+    "paper": "SFIT",
+    "qa_type": "experiment"
+  },
+  {
+    "question": "SFIT 使用了哪些评估指标？",
+    "ground_truth": "PSNR（峰值信噪比）、SSIM（结构相似性）、SAM（光谱角映射器）、ERGAS（相对全局综合误差）。",
+    "contexts": [
+      "The evaluation metrics include PSNR, SSIM, the spectral angle mapper (SAM), and ERGAS."
+    ],
+    "paper": "SFIT",
+    "qa_type": "experiment"
+  },
+  {
+    "question": "SFIT 的局部特征分支如何设计？",
+    "ground_truth": "局部特征分支通过 3×3 卷积层实现，接收全分辨率特征图 M0 和 P0 提取局部特征 L0。与 Transformer 长程分支并行工作，两者输出共同输入到 INN 融合模块。",
+    "contexts": [
+      "The local feature branch is implemented by a 3×3 convolution layer, and receives the full-resolution feature maps M0 and P0 to extract the local-range feature L0.",
+      "The feature extraction module consists of two branches, the local-range feature branch by convolution layer and the long-range feature branch by transformer architecture."
+    ],
+    "paper": "SFIT",
+    "qa_type": "methodology"
+  },
+  {
+    "question": "SFIT 中的仿射耦合层如何工作？",
+    "ground_truth": "给定局部特征 L0 和长程特征 G0 作为输入：L1 = L0 + φ(G0), G1 = G0 ⊙ exp(ρ(L1)) + η(L1)。其中 ρ、η 是缩放和平移函数（由神经网络实现），φ 是逆函数。该设计保证了前向和反向传播的可逆性，实现信息无损变换。",
+    "contexts": [
+      "Given local and long-range features L0 and G0, the output will be calculated as L1 = L0 + φ(G0), G1 = G0 ⊙ exp(ρ(L1)) + η(L1). The scale and translation functions are not necessarily invertible, and thus we realize them by neural networks. The ρ(·) and η(·) represent the scale and translation functions from the channels of local feature L0 to the channels of long-range feature G0, respectively."
+    ],
+    "paper": "SFIT",
+    "qa_type": "methodology"
+  },
+  {
+    "question": "SFIT 如何增强 INN 的表示能力？",
+    "ground_truth": "两种方案：1）每个可逆单元的中间特征通过跳跃连接传播到最终单元并拼接以增强表示；2）对长程分支使用加性变换，对局部分支使用增强的仿射变换。",
+    "contexts": [
+      "To increase the representational capacity of the network, two kinds of schemes are proposed: 1) immediate sequential features of each invertible unit are propagated to the final unit by skip-connection and then concatenated to enhance its representation; 2) we use an additive transformation for the long-range branch, and employ an enhanced affine transformation for the local-range branch."
+    ],
+    "paper": "SFIT",
+    "qa_type": "methodology"
+  },
+  {
+    "question": "DCPNet 的核心创新点是什么？",
+    "ground_truth": "首次提出双任务协同促进（Dual-Task Collaborative Promotion）框架，将全色锐化和 LRMS 图像超分辨率重建（LRMS-SR）集成到一个统一框架中。全色锐化通过吸收 LRMS-SR 的知识来提升性能，两个任务分支并行协作、互相促进。",
+    "contexts": [
+      "We propose a novel dual-task collaborative promotion network (DCPNet) for pansharpening. This method integrates pansharpening and LRMS image super-resolution (LRMS-SR) reconstruction into a unified framework, so that the pansharpening can improve its performance by absorbing the knowledge from LRMS image SR.",
+      "This is the first attempt to explore the performance improvement of pansharpening by absorbing the knowledge from the model of LRMS-SR."
+    ],
+    "paper": "DCPNet",
+    "qa_type": "innovation"
+  },
+  {
+    "question": "DCPNet 的双任务框架是如何设计的？",
+    "ground_truth": "包含两个并行分支：全色锐化网络（Pansharpening Network）和 LRMS-SR 超分重建网络。LRMS-SR 分支为全色锐化提供特征支持，并在更新参数时施加 SR 重建约束。全色锐化网络也为 LRMS-SR 分支注入有用信息。通过特征融合与挖掘模块（FFMM）作为桥梁实现双任务特征交互和融合。",
+    "contexts": [
+      "During the training phase, the LRMS-SR branch not only provides essential feature support for the pansharpening process but also imposes SR reconstruction constraints when updating the parameters of the pansharpening network. Similarly, the pansharpening network injects useful information into the LRMS-SR branch.",
+      "The proposed scheme incorporates a feature fusion and mining module (FFMM), which excels in mining both spectral information from the feature channels and spatial details information from the spatial positions of the fused features through a dual-branch feature highlighting mechanism."
+    ],
+    "paper": "DCPNet",
+    "qa_type": "architecture"
+  },
+  {
+    "question": "DCPNet 在哪些数据集上进行了实验？",
+    "ground_truth": "Gaofen-2 (GF-2) 和 WorldView-3 (WV-3) 两个卫星数据集，来自 Pancollection1 基准数据集。WV-3 有 8 个光谱波段，GF-2 有 4 个光谱波段。",
+    "contexts": [
+      "We conduct extensive experiments on two satellite datasets, Gaofen-2 (GF-2) and WorldView-3 (WV-3). The proposed method demonstrates excellent performance on both reduced-resolution and full-resolution images.",
+      "The WV-3 dataset consists of LRMS images with eight spectral bands. The GF-2 dataset contains LRMS images with four spectral bands."
+    ],
+    "paper": "DCPNet",
+    "qa_type": "experiment"
+  },
+  {
+    "question": "DCPNet 使用哪些评估指标？",
+    "ground_truth": "降分辨率实验：SAM、ERGAS、SCC、Q2n。全分辨率实验：QNR（包含光谱失真系数 Dλ 和空间失真系数 Ds）。",
+    "contexts": [
+      "We employ a set of evaluation metrics including SAM, ERGAS, SCC, and Q2n. SAM assesses spectral similarity. ERGAS measures the relative error. SCC evaluates spatial correlation. Q2n assesses overall image quality.",
+      "For full-resolution assessment, we use quality with no reference (QNR) as an evaluation metric. QNR is composed of the spectral distortion coefficient and spatial similarity."
+    ],
+    "paper": "DCPNet",
+    "qa_type": "experiment"
+  },
+  {
+    "question": "DCPNet 中的 FFMM（特征融合与挖掘模块）有什么作用？",
+    "ground_truth": "FFMM 通过双分支特征增强机制，从特征通道中挖掘光谱信息，从特征空间位置中挖掘空间细节信息。同时作为 LRMS-SR 和全色锐化两个分支之间信息交互和融合的桥梁，使两个网络能够以协作促进的方式进行训练。",
+    "contexts": [
+      "The proposed scheme incorporates a feature fusion and mining module (FFMM), which excels in mining both spectral information from the feature channels and spatial details information from the spatial positions of the fused features through a dual-branch feature highlighting mechanism.",
+      "This scheme serves as a bridge for facilitating the interaction and fusion of LRMS-SR reconstruction and pansharpening features, thereby ensuring that the two different task branches can be trained in a collaborative promotion manner."
+    ],
+    "paper": "DCPNet",
+    "qa_type": "methodology"
+  },
+  {
+    "question": "DCPNet 与单任务驱动的全色锐化方法有何不同？",
+    "ground_truth": "现有方法都是单任务驱动（single-task driven），仅关注全色锐化任务本身，特征提取能力受限。DCPNet 将 LRMS-SR 作为辅助任务引入，建立并行双任务协作促进框架，使全色锐化通过吸收超分任务的知识突破性能瓶颈。",
+    "contexts": [
+      "Current data-driven methods primarily focus on the design of single-task-driven networks. They tend to ignore the positive impact that incorporating auxiliary tasks could have on pansharpening.",
+      "In the aforementioned methods, despite the diverse designs of networks for pansharpening, all of these approaches are single-task driven. They primarily concentrate on their respective tasks, leading to certain limitations in the extracted features."
+    ],
+    "paper": "DCPNet",
+    "qa_type": "comparison"
+  },
+  {
+    "question": "DCPNet 中的 PAN-FE 分支和 LRMS-SR 分支如何互相促进？",
+    "ground_truth": "LRMS-SR 分支为全色锐化提供特征支持，优化全色锐化参数时施加 SR 重建约束，增强 PAN-FE 分支提取关键特征的能力。同时全色锐化网络向 LRMS-SR 分支注入有用信息，在全色锐化约束下增强 LRMS-SR 分支的特征提取能力。两者通过 FFMM 进行信息交互，实现协作训练。",
+    "contexts": [
+      "The LRMS-SR branch not only provides essential feature support for the pansharpening process but also imposes SR reconstruction constraints when updating the parameters of the pansharpening network. This contribution enhances the PAN feature extraction (PAN-FE) branch's capability to extract pivotal features. Similarly, the pansharpening network injects useful information into the LRMS-SR branch.",
+      "FFMM constructs a bridge for information interaction between the two branches, enabling both networks to extract higher quality features through a collaborative promotion relationship during subsequent loss function optimization."
+    ],
+    "paper": "DCPNet",
+    "qa_type": "methodology"
+  },
+  {
+    "question": "DCPNet 的全色锐化过程如何形式化定义？",
+    "ground_truth": "全色锐化定义为 {I_H, F_P, F_M} = ψ_ps(I_P, I_M; θ_ps)，其中 ψ_ps 是全色锐化网络，θ_ps 是其可学习参数，F_P 和 F_M 分别是 PAN 和 LRMS 图像的特征，I_H 是生成的 HRMS 图像。",
+    "contexts": [
+      "Pansharpening can be formulated as {I_H, F_P, F_M} = ψ_ps(I_P, I_M; θ_ps) where ψ_ps(·) represents the pansharpening network, θ_ps is its learnable parameters, and F_P and F_M represent the features of PAN and LRMS images, respectively."
+    ],
+    "paper": "DCPNet",
+    "qa_type": "methodology"
+  },
+  {
+    "question": "DCPNet 的消融实验验证了什么？",
+    "ground_truth": "消融实验验证了双任务协作促进框架的有效性：不仅提升了全色锐化网络的性能，还促进了 SR 重建网络生成更高质量的结果。同时验证了 FFMM 和各注意力机制在特征增强中的作用。",
+    "contexts": [
+      "Ablation studies confirm that our approach not only enhances the performance of the pansharpening network but also facilitates the generation of higher quality SR reconstruction results."
+    ],
+    "paper": "DCPNet",
+    "qa_type": "experiment"
+  },
+  {
+    "question": "DFCFN 的研究背景和问题是什么？",
+    "ground_truth": "DFCFN 针对高光谱全色锐化（Hyperspectral Pansharpening）任务。现有深度学习方法未充分考虑 PAN 和 LRHS 图像之间的模态特征差异，且大多使用上采样的 LRHS 图像作为网络输入，导致融合结果出现光谱和空间失真。",
+    "contexts": [
+      "Hyperspectral (HS) pansharpening aims to fuse high-spatial-resolution panchromatic (PAN) images with low-spatial-resolution HS (LRHS) images to generate high-spatial-resolution HS (HRHS) images.",
+      "Due to the lack of consideration for the modal feature difference between PAN and LRHS images, most deep learning-based methods suffer from spectral and spatial distortions in the fusion results. In addition, most methods use upsampled LRHS images as network input, resulting in spectral distortion."
+    ],
+    "paper": "DFCFN",
+    "qa_type": "problem"
+  },
+  {
+    "question": "DFCFN 的整体架构由哪两个子网络组成？",
+    "ground_truth": "FCCFN（Feature Correction Compensation Fusion Network）和 MSCFN（Multiscale Spectral Correction Fusion Network）。FCCFN 基于格状滤波器结构，实现模态特征的相互校正和补充，生成初始融合结果。MSCFN 基于 2D-DWT 构建多级频谱校正，抑制初始融合结果的光谱失真。",
+    "contexts": [
+      "DFCFN has two fusion stages: FCCFN and MSCFN. In the first stage, FCCFN reduces the differences between the two model features to produce the initial fusion result of the PAN and upsampled LRHS images. In the second stage, to suppress the spectral distortion in the initial fusion results, MSCFN is designed.",
+      "Based on the lattice filter structure, FCCFN is designed to obtain the initial fusion result by mutually correcting and supplementing the modal features from PAN and LRHS images. MSCFN based on 2-D discrete wavelet transform (2D-DWT) is constructed to gradually correct the spectral features."
+    ],
+    "paper": "DFCFN",
+    "qa_type": "architecture"
+  },
+  {
+    "question": "DFCFN 使用的格状滤波器结构（LFS）的原理是什么？",
+    "ground_truth": "格状滤波器结构受信号处理中标准格状滤波器（Lattice Filter）启发，通过自适应均衡器结构调整滤波器系数，校正系统时变特性并减少信号间干扰。DFCFN 将其用于校正 PAN 和 LRHS 图像之间的模态差异。LFS 使用两个格状滤波单元，通过空间注意力和通道注意力自适应获取交叉路径系数。",
+    "contexts": [
+      "In signal processing, the basic unit of the standard lattice filter is a locally correlated module structure called an adaptive equalizer. This structure adjusts the filter coefficients based on the characteristics of the input signals, helping to correct the time-varying characteristics of the system and reduce interference between signals.",
+      "Inspired by the lattice filter, we design a lattice fusion structure (LFS) to the difference between the two modal features. LFS can reduce the interference of differences between the two features on the fusion results by correcting and supplementing the modal features.",
+      "The coefficients on the two intersecting paths are adaptively obtained by performing spatial attention and channel attention operations on the two image features."
+    ],
+    "paper": "DFCFN",
+    "qa_type": "methodology"
+  },
+  {
+    "question": "DFCFN 的第二阶段 MSCFN 如何校正光谱？",
+    "ground_truth": "MSCFN 使用多级 2D-DWT 将初始融合结果分解为高频和低频分量，然后用 LRHS 图像的光谱特征作为引导特征重建精细的融合结果。在每个 DWT 层级构建 CE-Transformer，利用重建的 IDWT 特征或 LRHS 图像特征来校正初始融合结果的低频分量。",
+    "contexts": [
+      "Multilevel 2D-DWTs are used to decompose the initial fusion result into high- and low-frequency components, and then, the spectral features of the LRHS image are used as guiding features to reconstruct the fine fusion result. In MSCFN, a CE-Transformer in each-level DWT layer is constructed to correct the low-frequency components of the initial fusion result using the reconstructed IDWT features or the LRHS images features."
+    ],
+    "paper": "DFCFN",
+    "qa_type": "methodology"
+  },
+  {
+    "question": "DFCFN 中的 FCCFN 如何实现模态特征的相互校正？",
+    "ground_truth": "利用 LRHS 图像的丰富光谱信息，从下到上的交叉路径系数通过通道注意力获取，用于校正 PAN 图像的光谱特征。反之，PAN 图像具有丰富的空间信息，从上到下的交叉路径系数通过空间注意力获取，用于校正 LRHS 图像的空间特征。经过两个格状单元处理后，两路输出拼接再通过卷积得到初始融合结果。",
+    "contexts": [
+      "Considering the rich spectral information of upsampled LRHS images, the cross coefficients between the two paths from bottom to top are obtained using channel attention and are used to supplement and correct the spectral features of the PAN images. Conversely, PAN images have rich spatial information, and the cross coefficients between two paths from top to bottom are obtained using spatial attention and are used to supplement and correct the spatial features of the upsampled LRHS images."
+    ],
+    "paper": "DFCFN",
+    "qa_type": "methodology"
+  },
+  {
+    "question": "DFCFN 在哪些数据集上进行了评估？",
+    "ground_truth": "Pavia Center、Botswana 和 Chikusei 三个高光谱数据集。其中 Pavia Center 是城市场景（102×102 像素、102 波段），Botswana 是植被场景（1476×256 像素、145 波段，裁剪 128×128 块），Chikusei 是农业/城市场景（2517×2335 像素、128 波段，裁剪 128×128 块）。",
+    "contexts": [
+      "Extensive experiments on used simulated datasets and one real dataset demonstrate that our method achieves superior performance.",
+      "Our method achieves improvement in the spectral angle mapping (SAM) metric by 6.4%, 6.2%, and 5.3% compared to the second-best comparison approach on the Pavia Center, Botswana, and Chikusei datasets, respectively."
+    ],
+    "paper": "DFCFN",
+    "qa_type": "experiment"
+  },
+  {
+    "question": "DFCFN 相比第二优方法在 SAM 指标上提升了多少？",
+    "ground_truth": "在 Pavia Center 数据集上提升 6.4%，Botswana 数据集上提升 6.2%，Chikusei 数据集上提升 5.3%。",
+    "contexts": [
+      "Our method achieves improvement in the spectral angle mapping (SAM) metric by 6.4%, 6.2%, and 5.3% compared to the second-best comparison approach on the Pavia Center, Botswana, and Chikusei datasets, respectively."
+    ],
+    "paper": "DFCFN",
+    "qa_type": "experiment"
+  },
+  {
+    "question": "DFCFN 与之前的全色锐化方法在任务范围上有什么区别？",
+    "ground_truth": "之前的全色锐化方法主要针对多光谱（MS）图像融合（4-8 波段），DFCFN 专门针对高光谱（HS）图像融合（100+ 波段）。高光谱图像波段数远多于多光谱，对光谱保真度的要求更高，DFCFN 专门设计了 MSCFN 阶段来抑制光谱失真。",
+    "contexts": [
+      "Hyperspectral (HS) pansharpening aims to fuse high-spatial-resolution panchromatic (PAN) images with low-spatial-resolution HS (LRHS) images to generate high-spatial-resolution HS (HRHS) images.",
+      "Due to the lack of consideration for the modal feature difference between PAN and LRHS images, most deep learning-based methods suffer from spectral and spatial distortions in the fusion results."
+    ],
+    "paper": "DFCFN",
+    "qa_type": "comparison"
+  },
+  {
+    "question": "DFCFN 中 CE-Transformer 的作用是什么？",
+    "ground_truth": "CE-Transformer 在 MSCFN 的每个 DWT 层级中构建，用于利用重建的 IDWT 特征或 LRHS 图像特征来校正初始融合结果的低频分量，以抑制光谱失真。",
+    "contexts": [
+      "In MSCFN, a CE-Transformer in each-level DWT layer is constructed to correct the low-frequency components of the initial fusion result using the reconstructed IDWT features or the LRHS images features."
+    ],
+    "paper": "DFCFN",
+    "qa_type": "methodology"
+  },
+  {
+    "question": "DFCFN 如何解决上采样导致的光谱失真问题？",
+    "ground_truth": "大多数方法直接使用上采样的 LRHS 图像作为网络输入，导致光谱失真。DFCFN 通过双阶段设计解决：第一阶段 FCCFN 校正模态差异生成初始融合结果，第二阶段 MSCFN 基于 2D-DWT 和光谱引导的多级光谱校正，逐步修正初始融合结果的光谱特征。",
+    "contexts": [
+      "Most methods use upsampled LRHS images as network input, resulting in spectral distortion.",
+      "To address these issues, we propose a dual-stage feature correction fusion network (DFCFN) that achieves an accurate fusion of PAN and LRHS images by constructing two fusion subnetworks: a feature correction compensation fusion network (FCCFN) and a multiscale spectral correction fusion network (MSCFN).",
+      "MSCFN based on 2-D discrete wavelet transform (2D-DWT) is constructed to gradually correct the spectral features of the initial fusion result."
+    ],
+    "paper": "DFCFN",
+    "qa_type": "methodology"
+  },
+  {
+    "question": "全色锐化（Pansharpening）的基本目标是什么？",
+    "ground_truth": "全色锐化的目标是将高分辨率全色（PAN）图像与低分辨率多光谱（LRMS）图像融合，生成高分辨率多光谱（HRMS）图像。PAN 图像提供高空间分辨率，MS 图像提供光谱信息，融合结果兼具高空间分辨率和高光谱保真度。",
+    "contexts": [
+      "Pansharpening aims to combine a high-resolution panchromatic (PAN) image with a low-resolution multispectral (LRMS) image to produce a high-resolution multispectral (HRMS) image.",
+      "Pansharpening aims to produce a high resolution multispectral image by fusing a panchromatic image with a low-resolution multispectral image."
+    ],
+    "paper": "general",
+    "qa_type": "concept"
+  },
+  {
+    "question": "全色锐化中常用的降分辨率评估指标有哪些？各衡量什么？",
+    "ground_truth": "SAM（Spectral Angle Mapper）：测量光谱角度差异，评估光谱保真度，值越小越好。ERGAS：相对全局综合误差，衡量整体融合质量，值越小越好。PSNR/SSIM：峰值信噪比和结构相似性，衡量图像重建质量。Q2n/Q4/Q8：综合质量指标，考虑光谱和空间相关性。SCC：空间相关系数，衡量空间细节保持能力。",
+    "contexts": [
+      "SAM assesses spectral similarity between the experimental result and GT. A smaller SAM value indicates a higher level of spectral similarity. ERGAS measures the relative error between the experimental result and GT. A smaller ERGAS value indicates higher quality.",
+      "We evaluate using standard pansharpening metrics including SAM, ERGAS, and Q4/Q8 for reduced-resolution datasets.",
+      "Evaluation metrics include SAM, ERGAS, SCC, and Q2n."
+    ],
+    "paper": "general",
+    "qa_type": "concept"
+  },
+  {
+    "question": "全色锐化中常用的全分辨率评估指标有哪些？",
+    "ground_truth": "QNR（Quality with No Reference）：综合无参考质量指标。由 Dλ（光谱失真系数）和 Ds（空间失真系数）组成。HQNR 是混合 QNR。全分辨率评估没有真实参考图像（GT），因此使用无参考指标。",
+    "contexts": [
+      "For full-resolution assessment, we use quality with no reference (QNR) as an evaluation metric. QNR is composed of the spectral distortion coefficient and spatial similarity.",
+      "FS results are validated using three no-reference image quality metrics: the spectral distortion coefficient denoted as Ds and hybrid QNR (HQNR)."
+    ],
+    "paper": "general",
+    "qa_type": "concept"
+  },
+  {
+    "question": "Wald 协议在全色锐化中起什么作用？",
+    "ground_truth": "Wald 协议是构建降分辨率训练/测试数据集的标准方法。由于真实场景中不存在 HRMS 作为真实参考（GT），Wald 协议通过对原始 HRMS 图像进行降采样得到 LRMS 图像，同时将原始 HRMS 作为 GT。这样可以在降分辨率尺度上评估融合质量。",
+    "contexts": [
+      "Following Wald's protocol, we perform downsampling on the original HRMS images to generate synthetic LRMS images, with the original HRMS images serving as GT.",
+      "To obtain training and testing datasets, the Wald protocol is employed to generate the paired samples."
+    ],
+    "paper": "general",
+    "qa_type": "concept"
+  },
+  {
+    "question": "DWT（离散小波变换）在全色锐化中有哪些优势？",
+    "ground_truth": "DWT 能干净分离图像的不同频率分量（LL 低频、LH/HL/HH 高频），IDWT 无损重建。相比神经网络隐式学习频域分离，DWT 提供数学上严格的频率分解，避免频率混淆和信息丢失。多次 DWT 可构建小波金字塔实现多尺度处理。",
+    "contexts": [
+      "The Discrete Wavelet Transform (DWT) cleanly separates frequency components. The Inverse Discrete Wavelet Transform (IDWT) is lossless, preserving all information. Repeated DWT builds a wavelet pyramid, efficiently handling multi-scale features and enhancing detail detection.",
+      "DWT decomposes the image into four different frequency components. IDWT is the lossless inverse process of DWT. Multiple applications of DWT produce a multi-scale wavelet pyramid."
+    ],
+    "paper": "general",
+    "qa_type": "concept"
+  },
+  {
+    "question": "Transformer 在全色锐化中相比 CNN 有什么优势？",
+    "ground_truth": "CNN 受限于局部感受野，主要提取局部特征，难以建模长程依赖关系。Transformer 通过自注意力机制可以捕获图像中远距离像素之间的关系，对于融合需要整合 PAN 和 MS 图像全局信息的全色锐化任务特别有价值。但 Transformer 计算复杂度较高，且缺乏局部特征提取能力。",
+    "contexts": [
+      "Due to the limitation of the convolution operator, long-range spatial features are often not accurately obtained, thus limiting the overall performance.",
+      "ViT has demonstrated significant promise to address the issue of long-range dependency. Transformer blocks can be used to model long-range dependencies between patches through attention mechanisms.",
+      "CNNs are mostly concerned with local feature extraction. In contrast, ViT can model long-range dependencies."
+    ],
+    "paper": "general",
+    "qa_type": "concept"
+  },
+  {
+    "question": "这五篇论文在解决问题的方法论上有哪些不同路线？",
+    "ground_truth": "五篇论文代表了不同的技术路线：1）WFANet：频域路线，用小波变换干净分离频率 + 注意力机制融合；2）SFIT：Transformer 路线，用定制化 Transformer 做跨模态特征学习 + INN 无损融合；3）PSCSC：多分支路线，分光谱校正、空间补偿、融合三支逐步优化；4）DCPNet：多任务路线，引入超分辅助任务协同促进；5）DFCFN：格状滤波 + 多级光谱校正路线，分两阶段先校正再精修。",
+    "contexts": [
+      "WFANet: leverages wavelet transforms to cleanly separate frequencies and enable lossless reconstruction across different frequency domains.",
+      "SFIT: exploiting a customized transformer architecture and information-lossless invertible neural module for long-range dependencies modeling and effective feature fusion.",
+      "PSCSC: a progressive spectral correction and spatial compensation network with three branches: spectral correction, spatial compensation, and spectral-spatial fusion.",
+      "DCPNet: incorporates an LRMS image super-resolution reconstruction network into the pansharpening network, establishing a dual-task parallel collaborative framework.",
+      "DFCFN: a dual-stage feature correction fusion network with FCCFN based on lattice filter and MSCFN based on 2D-DWT."
+    ],
+    "paper": "general",
+    "qa_type": "comparison"
+  }
+]

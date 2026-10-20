@@ -1,0 +1,397 @@
+{
+  "summary": {
+    "mean_correctness": 1.490909090909091,
+    "distribution": {
+      "correct_2": 37,
+      "partial_1": 8,
+      "wrong_0": 10
+    }
+  },
+  "evaluations": [
+    {
+      "question": "WFANet 要解决的核心问题是什么？",
+      "paper": "WFANet",
+      "qa_type": "problem",
+      "correctness": 2,
+      "answer_preview": "WFANet 要解决的核心问题是：在全色锐化任务中，现有方法要么仅在空间域操作，要么未能充分利用频域优势，导致无法有效融合高频和低频信息，从而影响高分辨率多光谱图像的重建质量。(来源#4: AAAI2"
+    },
+    {
+      "question": "WFANet 的核心创新是什么？",
+      "paper": "WFANet",
+      "qa_type": "innovation",
+      "correctness": 2,
+      "answer_preview": "WFANet 的核心创新是提出了一个**小波辅助的多频注意力网络**，其关键组件为**多频融合注意力模块 (MFFA)**。该模块通过两个阶段实现跨频率信息融合：**频率注意力三元组生成 (FATG)"
+    },
+    {
+      "question": "WFANet 如何使用小波变换？",
+      "paper": "WFANet",
+      "qa_type": "methodology",
+      "correctness": 2,
+      "answer_preview": "WFANet 通过以下方式使用小波变换：\n\n1.  **构建多频特征**：利用**离散小波变换 (DWT)** 将输入特征分解为低频和高频子带，从而构建多频特征表示。 (来源#1: AAAI25-WF"
+    },
+    {
+      "question": "WFANet 中的 Frequency Attention Triplet 由哪些部分组成，各部分物理含义是什么？",
+      "paper": "WFANet",
+      "qa_type": "methodology",
+      "correctness": 2,
+      "answer_preview": "WFANet 中的 Frequency Attention Triplet 由三个部分组成，各部分物理含义如下：\n\n1.  **Frequency-Query**：代表**不同频率的特征**，即我们想"
+    },
+    {
+      "question": "WFANet 包含哪两个子模块？",
+      "paper": "WFANet",
+      "qa_type": "architecture",
+      "correctness": 2,
+      "answer_preview": "WFANet 包含两个子模块：**多频融合注意力模块 (MFFA)** 和 **空间细节增强模块 (SDEM)**。(来源#3: AAAI25-WFANet-用于全色锐化的小波辅助多频注意力网络 / "
+    },
+    {
+      "question": "WFANet 在哪些数据集上进行了评估？使用了哪些指标？",
+      "paper": "WFANet",
+      "qa_type": "experiment",
+      "correctness": 0,
+      "answer_preview": "WFANet 在多个数据集上进行了评估，具体包括：**WorldView-3、IKONOS 和 Pléiades** 数据集。(来源#1: AAAI25-WFANet-用于全色锐化的小波辅助多频注意力"
+    },
+    {
+      "question": "WFANet 相比第二优方法在 PSNR 上有多少提升？",
+      "paper": "WFANet",
+      "qa_type": "experiment",
+      "correctness": 2,
+      "answer_preview": "WFANet 相比第二优方法在 PSNR 上的提升分别为：在 WV3 数据集上提升 0.228dB，在 QB 数据集上提升 0.334dB，在 GF2 数据集上提升 0.417dB。(来源#1: AA"
+    },
+    {
+      "question": "WFANet 的 Spatial Detail Enhancement Module (SDEM) 的作用是什么？",
+      "paper": "WFANet",
+      "qa_type": "methodology",
+      "correctness": 2,
+      "answer_preview": "WFANet 的 Spatial Detail Enhancement Module (SDEM) 的作用是**提取和增强频域内的空间细节信息**，从而提升重建图像的质量。(来源#4: AAAI25-"
+    },
+    {
+      "question": "WFANet 的整体框架是什么结构？",
+      "paper": "WFANet",
+      "qa_type": "architecture",
+      "correctness": 2,
+      "answer_preview": "WFANet 的整体框架是一个**多尺度渐进式重建框架**，它充分利用了小波金字塔固有的多尺度特性。(来源#3: AAAI25-WFANet-用于全色锐化的小波辅助多频注意力网络 / Introduc"
+    },
+    {
+      "question": "WFANet 的方法与之前频域方法（如 FAFNet）有什么区别？",
+      "paper": "WFANet",
+      "qa_type": "comparison",
+      "correctness": 0,
+      "answer_preview": "暂无相关信息。参考信息中未提及WFANet与FAFNet的具体区别。"
+    },
+    {
+      "question": "PSCSC 网络要解决的核心问题是什么？",
+      "paper": "PSCSC",
+      "qa_type": "problem",
+      "correctness": 2,
+      "answer_preview": "PSCSC 网络要解决的核心问题是：在全色锐化任务中，有效缓解全色（PAN）图像与多光谱（MS）图像之间的模态差异，从而在增强空间细节的同时，校正局部和全局的光谱信息。(来源#4: A_Progres"
+    },
+    {
+      "question": "PSCSC 网络的整体架构由哪三个分支组成？",
+      "paper": "PSCSC",
+      "qa_type": "architecture",
+      "correctness": 2,
+      "answer_preview": "PSCSC 网络的整体架构由三个分支组成：**光谱校正分支**、**空间补偿分支**和**光谱-空间融合（SSF）分支**。(来源#1: A_Progressive_Spectral_Correcti"
+    },
+    {
+      "question": "PSCSC 中的 LSR 和 GSR 模块各有什么作用？",
+      "paper": "PSCSC",
+      "qa_type": "methodology",
+      "correctness": 2,
+      "answer_preview": "PSCSC 中的 LSR 和 GSR 模块的作用如下：\n\n1.  **LSR（局部光谱增强）模块**：用于**增强独特的局部光谱特征**。(来源#1: A_Progressive_Spectral_C"
+    },
+    {
+      "question": "LSR 模块的具体实现方法是什么？",
+      "paper": "PSCSC",
+      "qa_type": "methodology",
+      "correctness": 0,
+      "answer_preview": "暂无相关信息。参考信息中未提及LSR模块的具体实现方法。"
+    },
+    {
+      "question": "PSCSC 中的 DAFE 模块是什么？",
+      "paper": "PSCSC",
+      "qa_type": "methodology",
+      "correctness": 1,
+      "answer_preview": "PSCSC 中的 DAFE 模块是**动态自适应特征增强模块**。其作用是更好地保留从全色（PAN）图像中提取的空间信息，并通过自适应卷积逐步细化空间信息。(来源#2: A_Progressive_S"
+    },
+    {
+      "question": "SSF（光谱-空间融合）分支如何工作？",
+      "paper": "PSCSC",
+      "qa_type": "methodology",
+      "correctness": 2,
+      "answer_preview": "SSF（光谱-空间融合）分支的工作方式如下：\n\n1.  **生成初始特征**：首先，将上采样后的多光谱图像（IUPMS）和全色图像（IPAN）进行拼接，并通过两个卷积层生成初始特征 Fini。(来源#"
+    },
+    {
+      "question": "PSCSC 在哪些数据集上进行了实验？",
+      "paper": "PSCSC",
+      "qa_type": "experiment",
+      "correctness": 2,
+      "answer_preview": "PSCSC 在 **Pléiades、IKONOS 和 WorldView-3** 这三个数据集上进行了实验。(来源#1: A_Progressive_Spectral_Correction_and_"
+    },
+    {
+      "question": "PSCSC 使用哪些评估指标？",
+      "paper": "PSCSC",
+      "qa_type": "experiment",
+      "correctness": 0,
+      "answer_preview": "PSCSC 使用的评估指标包括：**SAM（光谱角映射器）、ERGAS（相对全局综合误差）、SCC（空间相关系数）和 Q2n**。(来源#1: A_Progressive_Spectral_Corre"
+    },
+    {
+      "question": "PSCSC 如何验证各模块的有效性？",
+      "paper": "PSCSC",
+      "qa_type": "experiment",
+      "correctness": 1,
+      "answer_preview": "PSCSC 通过**消融实验**来验证各模块的有效性。具体做法是：将完整的网络与**移除对应模块**的变体网络进行对比分析，从而评估 LSR、GSR 和 DAFE 这三个核心模块各自的作用。(来源#1"
+    },
+    {
+      "question": "PSCSC 与现有方法相比的总体优势是什么？",
+      "paper": "PSCSC",
+      "qa_type": "comparison",
+      "correctness": 2,
+      "answer_preview": "PSCSC 与现有方法相比的总体优势是：通过光谱校正分支和空间补偿分支之间的**渐进式交互**，能够逐步细化和整合光谱与空间信息，从而获得**更优的融合结果**。(来源#3: A_Progressiv"
+    },
+    {
+      "question": "SFIT 的核心贡献是什么？",
+      "paper": "SFIT",
+      "qa_type": "innovation",
+      "correctness": 2,
+      "answer_preview": "SFIT 的核心贡献是提出了一个**定制化的 Transformer 模块**和一个**密集连接的可逆神经网络融合模块**，用于全色锐化任务。(来源#2: AAAI2022（SFIT原文） / Met"
+    },
+    {
+      "question": "SFIT 的整体网络架构是怎样的？",
+      "paper": "SFIT",
+      "qa_type": "architecture",
+      "correctness": 2,
+      "answer_preview": "SFIT 的整体网络架构包含两个核心设计：\n\n1.  **局部和长距离特征提取模块**：用于提取图像特征。\n2.  **密集连接的可逆特征融合神经模块**：用于融合提取到的特征。\n\n(来源#1: AA"
+    },
+    {
+      "question": "SFIT 中的 Transformer 与标准 Transformer 有何不同？",
+      "paper": "SFIT",
+      "qa_type": "methodology",
+      "correctness": 1,
+      "answer_preview": "SFIT 中的 Transformer 与标准 Transformer 的主要不同在于**对 Value（V）的扩展**。具体来说，SFIT 将标准 Transformer 中的 V 扩展为两个分量 "
+    },
+    {
+      "question": "SFIT 为什么使用可逆神经网络（INN）进行特征融合？",
+      "paper": "SFIT",
+      "qa_type": "methodology",
+      "correctness": 1,
+      "answer_preview": "SFIT 使用可逆神经网络（INN）进行特征融合，是因为 INN 能够**保留提取到的特征信息**，从而实现有效的特征融合。(来源#2: AAAI2022（SFIT原文） / Methodology)"
+    },
+    {
+      "question": "SFIT 在哪些数据集上进行了评估？",
+      "paper": "SFIT",
+      "qa_type": "experiment",
+      "correctness": 0,
+      "answer_preview": "暂无相关信息。参考信息中未提及 SFIT 具体在哪些数据集上进行了评估。"
+    },
+    {
+      "question": "SFIT 使用了哪些评估指标？",
+      "paper": "SFIT",
+      "qa_type": "experiment",
+      "correctness": 0,
+      "answer_preview": "暂无相关信息。参考信息中未提及 SFIT 具体使用了哪些评估指标。"
+    },
+    {
+      "question": "SFIT 的局部特征分支如何设计？",
+      "paper": "SFIT",
+      "qa_type": "methodology",
+      "correctness": 2,
+      "answer_preview": "SFIT 的局部特征分支由一个 **3×3 卷积层**实现，用于接收全分辨率特征图 M0 和 P0，以提取局部范围特征 L0。(来源#2: AAAI2022（SFIT原文） / Methodology"
+    },
+    {
+      "question": "SFIT 中的仿射耦合层如何工作？",
+      "paper": "SFIT",
+      "qa_type": "methodology",
+      "correctness": 2,
+      "answer_preview": "SFIT 中的仿射耦合层通过以下步骤工作：\n\n1.  **输入**：接收局部特征 L0 和长距离特征 G0。\n2.  **局部特征更新**：使用加法变换更新局部特征，公式为 L1 = L0 + ϕ(G"
+    },
+    {
+      "question": "SFIT 如何增强 INN 的表示能力？",
+      "paper": "SFIT",
+      "qa_type": "methodology",
+      "correctness": 1,
+      "answer_preview": "SFIT 通过以下两种方式增强 INN 的表示能力：\n\n1.  **引入密集连接**：在 INN 模块中引入密集连接，以增强信息流动和特征复用。\n2.  **设计增强的仿射耦合层**：在仿射耦合层中，"
+    },
+    {
+      "question": "DCPNet 的核心创新点是什么？",
+      "paper": "DCPNet",
+      "qa_type": "innovation",
+      "correctness": 2,
+      "answer_preview": "DCPNet 的核心创新点是提出了一个**双任务协作促进网络**，该网络包含两个协同工作的分支：一个用于**全色锐化**，另一个用于**光谱超分辨率**。这两个任务通过协作，能够相互促进，共同提升性能"
+    },
+    {
+      "question": "DCPNet 的双任务框架是如何设计的？",
+      "paper": "DCPNet",
+      "qa_type": "architecture",
+      "correctness": 1,
+      "answer_preview": "DCPNet 的双任务框架设计如下：\n\n1.  **双任务并行协作**：该框架将全色锐化和低分辨率多光谱图像超分辨率重建（LRMS-SR）这两个任务整合到一个统一的框架中，建立了双任务并行协作关系。\n"
+    },
+    {
+      "question": "DCPNet 在哪些数据集上进行了实验？",
+      "paper": "DCPNet",
+      "qa_type": "experiment",
+      "correctness": 0,
+      "answer_preview": "暂无相关信息。参考信息中未提及 DCPNet 具体在哪些数据集上进行了实验。"
+    },
+    {
+      "question": "DCPNet 使用哪些评估指标？",
+      "paper": "DCPNet",
+      "qa_type": "experiment",
+      "correctness": 2,
+      "answer_preview": "DCPNet 使用的评估指标包括：SAM（光谱角映射器）、ERGAS（相对全局综合误差）、SCC（空间相关系数）和 Q2n（通用图像质量指数）。(来源#2: DCPNet_A_Dual-Task_Co"
+    },
+    {
+      "question": "DCPNet 中的 FFMM（特征融合与挖掘模块）有什么作用？",
+      "paper": "DCPNet",
+      "qa_type": "methodology",
+      "correctness": 2,
+      "answer_preview": "DCPNet 中的 FFMM（特征融合与挖掘模块）主要起到以下两个作用：\n\n1.  **融合双分支特征**：该模块能够促进并融合来自 PAN-FE 和 LRMS-SR 两个网络分支的图像特征，为后续的"
+    },
+    {
+      "question": "DCPNet 与单任务驱动的全色锐化方法有何不同？",
+      "paper": "DCPNet",
+      "qa_type": "comparison",
+      "correctness": 2,
+      "answer_preview": "DCPNet 与单任务驱动的全色锐化方法的核心区别在于，它通过引入辅助任务来打破单任务方法的性能限制。具体而言：\n\n*   **核心差异**：单任务方法仅专注于全色锐化本身，而 DCPNet 采用**"
+    },
+    {
+      "question": "DCPNet 中的 PAN-FE 分支和 LRMS-SR 分支如何互相促进？",
+      "paper": "DCPNet",
+      "qa_type": "methodology",
+      "correctness": 2,
+      "answer_preview": "DCPNet 中的 PAN-FE 分支和 LRMS-SR 分支通过以下两种方式互相促进：\n\n1.  **特征交互**：PAN-FE 分支提取的特征 FP 被用于 LRMS-SR 分支的超分辨率重建过程"
+    },
+    {
+      "question": "DCPNet 的全色锐化过程如何形式化定义？",
+      "paper": "DCPNet",
+      "qa_type": "methodology",
+      "correctness": 2,
+      "answer_preview": "DCPNet 的全色锐化过程形式化定义为：给定输入全色图像 FP 和低分辨率多光谱图像 FM，通过全色锐化网络生成高分辨率多光谱图像 IH，其优化目标为最小化损失函数 Lps(IH | (FP, FM"
+    },
+    {
+      "question": "DCPNet 的消融实验验证了什么？",
+      "paper": "DCPNet",
+      "qa_type": "experiment",
+      "correctness": 2,
+      "answer_preview": "DCPNet 的消融实验验证了其各个核心组件的有效性，具体包括：\n\n1.  **FFMM 的有效性**：验证了特征融合与挖掘模块（FFMM）的有效性。(来源#1: DCPNet_A_Dual-Task"
+    },
+    {
+      "question": "DFCFN 的研究背景和问题是什么？",
+      "paper": "DFCFN",
+      "qa_type": "problem",
+      "correctness": 2,
+      "answer_preview": "DFCFN 的研究背景和问题如下：\n\n1.  **研究背景**：高光谱全色锐化旨在将低分辨率高光谱图像（LRHS）与高分辨率全色图像（PAN）融合，以生成高分辨率高光谱图像（HRHS）。然而，现有方法"
+    },
+    {
+      "question": "DFCFN 的整体架构由哪两个子网络组成？",
+      "paper": "DFCFN",
+      "qa_type": "architecture",
+      "correctness": 2,
+      "answer_preview": "DFCFN 的整体架构由以下两个子网络组成：\n\n1.  **特征校正补偿融合网络（FCCFN）**：该子网络基于格型滤波器结构设计，通过相互校正和补充来自 PAN 和 LRHS 图像的模态特征，以获得"
+    },
+    {
+      "question": "DFCFN 使用的格状滤波器结构（LFS）的原理是什么？",
+      "paper": "DFCFN",
+      "qa_type": "methodology",
+      "correctness": 2,
+      "answer_preview": "DFCFN 使用的格状滤波器结构（LFS）的原理是：通过校正和补充两个模态特征，减少它们之间的差异对融合结果的干扰。(来源#3: DFCFN / II. RELATED WORK)\n\n具体实现上，LF"
+    },
+    {
+      "question": "DFCFN 的第二阶段 MSCFN 如何校正光谱？",
+      "paper": "DFCFN",
+      "qa_type": "methodology",
+      "correctness": 2,
+      "answer_preview": "DFCFN 的第二阶段 MSCFN 通过以下方式校正光谱：\n\n1.  **基于多级 2D-DWT 和 CE-Transformer**：MSCFN 基于多级二维离散小波变换（2D-DWT）和条件熵变换"
+    },
+    {
+      "question": "DFCFN 中的 FCCFN 如何实现模态特征的相互校正？",
+      "paper": "DFCFN",
+      "qa_type": "methodology",
+      "correctness": 1,
+      "answer_preview": "DFCFN 中的 FCCFN 通过以下方式实现模态特征的相互校正：\n\n1.  **基于格型滤波器结构**：FCCFN 基于信号处理领域的格型滤波器结构设计，该结构能够校正系统特性并减少信号干扰的影响，"
+    },
+    {
+      "question": "DFCFN 在哪些数据集上进行了评估？",
+      "paper": "DFCFN",
+      "qa_type": "experiment",
+      "correctness": 0,
+      "answer_preview": "DFCFN 在以下数据集上进行了评估：\n\n1.  **三个模拟数据集**：Pavia Center、Botswana 和 Chikusei。(来源#1: DFCFN / IV. EXPERIMENTS"
+    },
+    {
+      "question": "DFCFN 相比第二优方法在 SAM 指标上提升了多少？",
+      "paper": "DFCFN",
+      "qa_type": "experiment",
+      "correctness": 2,
+      "answer_preview": "DFCFN 相比第二优方法在 SAM 指标上的提升如下：\n\n*   **Pavia Center 数据集**：提升了 6.4%。(来源#1: DFCFN / Abstract)\n*   **Botsw"
+    },
+    {
+      "question": "DFCFN 与之前的全色锐化方法在任务范围上有什么区别？",
+      "paper": "DFCFN",
+      "qa_type": "comparison",
+      "correctness": 0,
+      "answer_preview": "暂无相关信息。根据现有参考信息，无法确定 DFCFN 与之前的全色锐化方法在任务范围上的具体区别。参考信息主要描述了 DFCFN 自身的架构、原理和性能，未提供与其他方法在任务范围上的对比分析。"
+    },
+    {
+      "question": "DFCFN 中 CE-Transformer 的作用是什么？",
+      "paper": "DFCFN",
+      "qa_type": "methodology",
+      "correctness": 2,
+      "answer_preview": "DFCFN 中 CE-Transformer 的作用是：通过设计条件熵变换器（CE-Transformer），逐步校正初始融合结果的光谱特征，以抑制光谱失真并获得精细的高分辨率高光谱图像（HRHS）结"
+    },
+    {
+      "question": "DFCFN 如何解决上采样导致的光谱失真问题？",
+      "paper": "DFCFN",
+      "qa_type": "methodology",
+      "correctness": 2,
+      "answer_preview": "DFCFN 通过以下方式解决上采样导致的光谱失真问题：\n\n1.  **第一阶段：FCCFN 减少特征差异**：在第一阶段，特征校正补偿融合网络（FCCFN）通过格型滤波器结构，相互校正和补充 PAN "
+    },
+    {
+      "question": "全色锐化（Pansharpening）的基本目标是什么？",
+      "paper": "general",
+      "qa_type": "concept",
+      "correctness": 2,
+      "answer_preview": "全色锐化（Pansharpening）的基本目标是：融合多光谱（MS）图像和全色（PAN）图像的互补信息，以生成高空间分辨率的多光谱图像。(来源#4: AAAI2022（SFIT原文） / Intro"
+    },
+    {
+      "question": "全色锐化中常用的降分辨率评估指标有哪些？各衡量什么？",
+      "paper": "general",
+      "qa_type": "concept",
+      "correctness": 2,
+      "answer_preview": "全色锐化中常用的降分辨率评估指标及其衡量内容如下：\n\n1.  **SAM（光谱角映射器）**：衡量光谱相似性，通过计算实验结果与真实值（GT）之间的光谱角，值越小表示光谱相似度越高。(来源#1: DC"
+    },
+    {
+      "question": "全色锐化中常用的全分辨率评估指标有哪些？",
+      "paper": "general",
+      "qa_type": "concept",
+      "correctness": 0,
+      "answer_preview": "暂无相关信息。根据现有参考信息，无法确定全色锐化中常用的全分辨率评估指标具体有哪些。参考信息中仅提及了降分辨率评估指标（如SAM、ERGAS、SCC、Q2n等），未提供全分辨率评估指标的完整列表。"
+    },
+    {
+      "question": "Wald 协议在全色锐化中起什么作用？",
+      "paper": "general",
+      "qa_type": "concept",
+      "correctness": 2,
+      "answer_preview": "Wald 协议在全色锐化中起以下作用：\n\n1.  **生成训练样本**：由于真实高分辨率多光谱图像（GT）通常不可用，Wald 协议通过对原始全色（PAN）和多光谱（MS）图像进行下采样，生成配对的低"
+    },
+    {
+      "question": "DWT（离散小波变换）在全色锐化中有哪些优势？",
+      "paper": "general",
+      "qa_type": "concept",
+      "correctness": 2,
+      "answer_preview": "DWT（离散小波变换）在全色锐化中的优势包括：\n\n1.  **无损重建**：逆离散小波变换（IDWT）是无损的，能够保留所有信息，避免信息丢失。(来源#1: AAAI25-WFANet-用于全色锐化的"
+    },
+    {
+      "question": "Transformer 在全色锐化中相比 CNN 有什么优势？",
+      "paper": "general",
+      "qa_type": "concept",
+      "correctness": 2,
+      "answer_preview": "Transformer 在全色锐化中相比 CNN 的优势在于：**能够建模长距离依赖关系，从而提取全局特征**。(来源#1: DFCFN / II. RELATED WORK)\n\n具体论据如下：\n\n*"
+    },
+    {
+      "question": "这五篇论文在解决问题的方法论上有哪些不同路线？",
+      "paper": "general",
+      "qa_type": "comparison",
+      "correctness": 1,
+      "answer_preview": "根据现有参考信息，这五篇论文在解决问题的方法论上存在以下不同路线：\n\n1.  **基于生成对抗网络（GAN）的路线**：提出无监督的 GAN 模型来解决训练样本问题，并设计从粗到细的方案来提升融合图像"
+    }
+  ]
+}
